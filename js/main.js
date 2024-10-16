@@ -132,12 +132,14 @@ badnikfly.src = flyBadnik[0];
 function drawGround(){	
 	ctx.clearRect(groundXPos1, 350, 800, 50);
 	ctx.clearRect(groundXPos2, 350, 800, 50);
-
+	ctx.imageSmoothingEnabled = false;
 	ctx.drawImage(ground, groundXPos1, 350, 800, 50);
 	ctx.drawImage(ground, groundXPos2, 350, 800, 50);
 }
 
 function drawSonic(){	
+	ctx.imageSmoothingEnabled = false;
+
 	if(isRun && posY < 270){
 		ctx.clearRect(100, posY - 20, ssX, ssY);
 		ctx.drawImage(player, 100, posY, ssX, ssX);
@@ -204,6 +206,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 function drawMotobug(){
+	ctx.imageSmoothingEnabled = false;
 	ctx.clearRect(posXM + 40, posYM, sizeM, sizeM);
 	ctx.drawImage(motobug, posXM, posYM, sizeM, sizeM);
 }
@@ -253,6 +256,7 @@ function checkCollision(){
 }
 
 function drawFlyBadnik(){
+	ctx.imageSmoothingEnabled = false;
 	ctx.clearRect(fbPosX + 40, fbPosY, fbsX, fbsY);
 	ctx.drawImage(badnikfly, fbPosX, fbPosY, fbsX, fbsY);
 }
